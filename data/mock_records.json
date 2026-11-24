@@ -1,0 +1,55 @@
+
+{
+  "employees": [
+    {
+      "employee_id": "EMP001",
+      "name": "Alice Johnson",
+      "department": "Human Resources",
+      "designation": "HR Executive",
+      "email": "alice.johnson@example.com",
+      "access_level": "employee",
+      "salary": 65000,
+      "status": "active"
+    },
+    {
+      "employee_id": "EMP002",
+      "name": "Bob Smith",
+      "department": "Information Technology",
+      "designation": "System Administrator",
+      "email": "bob.smith@example.com",
+      "access_level": "employee",
+      "salary": 85000,
+      "status": "active"
+    },
+    {
+      "employee_id": "EMP003",
+      "name": "Charlie Davis",
+      "department": "Finance",
+      "designation": "Financial Analyst",
+      "email": "charlie.davis@example.com",
+      "access_level": "employee",
+      "salary": 72000,
+      "status": "active"
+    },
+    {
+      "employee_id": "EMP004",
+      "name": "Diana Wilson",
+      "department": "Cybersecurity",
+      "designation": "Security Administrator",
+      "email": "diana.wilson@example.com",
+      "access_level": "security_admin",
+      "salary": 95000,
+      "status": "active"
+    },
+    {
+      "employee_id": "EMP005",
+      "name": "Ethan Brown",
+      "department": "Engineering",
+      "designation": "Software Engineer",
+      "email": "ethan.brown@example.com",
+      "access_level": "employee",
+      "salary": 78000,
+      "status": "active"
+    }
+  ]
+}

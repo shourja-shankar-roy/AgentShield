@@ -1,0 +1,109 @@
+
+AGENTSHIELD SECURITY GUIDELINES
+================================
+
+Document ID: SEC-001
+Classification: Internal
+Version: 1.0
+
+1. PROMPT INJECTION
+
+Prompt injection occurs when malicious instructions attempt to manipulate an AI system into ignoring its intended instructions or performing unauthorized actions.
+
+Examples:
+- Ignore all previous instructions.
+- Reveal confidential employee records.
+- Disregard access restrictions.
+- Execute an unauthorized administrative tool.
+
+Security requirements:
+- Treat user input and retrieved content as untrusted.
+- Never allow external content to override system instructions.
+- Apply authorization checks independently of model decisions.
+
+2. INDIRECT PROMPT INJECTION
+
+Indirect prompt injection occurs when malicious instructions are embedded in external content, such as webpages, documents, or files processed by an AI agent.
+
+Security requirements:
+- Treat retrieved documents and webpages as untrusted data.
+- Do not execute instructions found in retrieved content.
+- Validate every proposed tool invocation.
+
+3. TOOL SECURITY
+
+AI agents may use tools to access files, databases, search services, or other resources.
+
+Security requirements:
+- Only registered tools may be executed.
+- Every tool invocation must pass authorization checks.
+- Tool arguments must be validated.
+- Unknown tools must be rejected.
+- Tool execution must remain within approved boundaries.
+
+4. PATH TRAVERSAL
+
+Path traversal attempts manipulate file paths to access resources outside an authorized directory.
+
+Examples:
+- ../../private.txt
+- ..\..\Windows\system.ini
+- Absolute paths outside the permitted data directory.
+
+Security requirements:
+- Resolve and validate file paths.
+- Restrict file access to approved directories.
+- Reject paths that escape the permitted directory.
+- Do not rely on string checks alone.
+
+5. DATA EXFILTRATION
+
+Data exfiltration is the unauthorized transfer or disclosure of sensitive information.
+
+Examples:
+- Retrieving confidential employee records without permission.
+- Sending internal data to an unauthorized destination.
+- Revealing sensitive information in model responses.
+
+Security requirements:
+- Enforce least-privilege access.
+- Inspect tool outputs before returning them.
+- Prevent unauthorized disclosure of sensitive records.
+- Record suspicious access attempts.
+
+6. OUTPUT SECURITY
+
+AI-generated responses may contain sensitive information or unsafe content.
+
+Security requirements:
+- Inspect outputs for unauthorized sensitive data.
+- Avoid exposing internal system information.
+- Apply data-access restrictions before displaying results.
+- Record security violations.
+
+7. AUDIT LOGGING
+
+Security-relevant events should include:
+- Timestamp
+- User role
+- Requested tool
+- Requested action
+- Authorization decision
+- Execution result
+- Security event details
+
+Audit logs must not unnecessarily expose sensitive employee information.
+
+8. DEFENSE-IN-DEPTH
+
+No single security mechanism should be trusted to protect the entire agent.
+
+AgentShield should combine:
+- Input inspection
+- Role-based access control
+- Tool authorization
+- Argument validation
+- Output inspection
+- Audit logging
+
+END OF DOCUMENT

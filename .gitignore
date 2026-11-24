@@ -1,0 +1,35 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Testing
+.pytest_cache/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated logs
+logs/
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Archives
+*.zip
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Backup and temporary files
+app_backup_before_runtime.py
+example.md
+python
